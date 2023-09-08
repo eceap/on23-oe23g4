@@ -5,13 +5,13 @@ Completen con sus datos la siguiente tabla:
 Campo|Detalle
 ------|-----------
 Nombre de Proyecto| "Nnnn"
-Número de Grupo | x
-Alumnos| Nombre_Apellido1
-|  | Nombre_Apellido2
-|  | Nombre_Apellido3
-|  | Nombre_Apellido4
+Número de Grupo | 4
+Alumnos| Agustin Baliñas
+|  | Leandro Calviño
+|  | Nicolas Ponce
+|  | Bruno Rodriguez Garay
 Curso| 6°Electrónica
-Año| 20XX
+Año| 2023
 
 ## Descripción del Proyecto
 Texto.
