@@ -25,7 +25,10 @@ typedef enum{ E_INICIALIZACION, E_FUNCIONANDO, E_ERROR } estadoMEF_t;
 
 /*==================[ Definiciones de datos internos ]=========================*/
 estadoMEF_t  estadoActual; // Variable de estado (global)
-tick_t tInicio, t_testQ;
+tick_t tInicio;
+uint8_t flagErrorTransformador = 0;
+uint8_t flagErrorFusible = 0;
+uint8_t flagErrorCI = 0;
 
 /*==================[ Definiciones de datos externos ]=========================*/
 //char datoUser; //Ejemplo
@@ -64,6 +67,13 @@ void appInit(void){
     TRIS_PIN_Q_NEGADO = 0;
     adcInit();
     tickInit();
+
+    PIN_LED1 = 0;
+    PIN_LED2 = 0;
+    PIN_LED3 = 0;
+    PIN_LED4 = 0;
+    PIN_LED5 = 0;
+    PIN_BUZZER = 0;
     
     /* Habilito Interrupciones si es necesario*/
     CCP1IE = 1;
@@ -114,18 +124,6 @@ void ActualizarMEF(void){
 }
 
 uint8_t tests(void){
-    if(PIN_FUSIBLE == 0){ // Si NO recibo tension en el pin hay error
-        LED_FUSIBLE = 1;
-        return(1);
-    }
-    if(PIN_TRANSFORMADOR == 1){ // Si recibo tension en el pin hay error
-        LED_TRANSFORMADOR = 1;
-        return(1);
-    }
-    if(PIN_ALIM_CI == 0  || PIN_Q == PIN_Q_NEGADO){
-        LED_FALLA_CI = 1;
-        return(1);
-    }
     if(PIN_ALIM_CI == 1){
         LED_TENSION_CI = 1;
     } else {
@@ -135,6 +133,35 @@ uint8_t tests(void){
         LED_TENSION_GRAL = 1;
     } else {
         LED_TENSION_GRAL = 0;
+    }
+    
+    if(PIN_FUSIBLE == 0){ // Si NO recibo tension en el pin hay error
+        LED_FUSIBLE = 1;
+        flagErrorFusible = 1;
+    } else {
+        LED_FUSIBLE = 0;
+        flagErrorFusible = 0;
+    }
+
+    if(PIN_TRANSFORMADOR == 1){ // Si recibo tension en el pin hay error
+        LED_TRANSFORMADOR = 1;
+        flagErrorTransformador = 1;
+    } else {
+        LED_TRANSFORMADOR = 0;
+        flagErrorTransformador = 0;
+    }
+
+    if(PIN_ALIM_CI == 0  || PIN_Q == PIN_Q_NEGADO){
+        LED_FALLA_CI = 1;
+        flagErrorCI = 1;
+    } else {
+        LED_FALLA_CI = 0;
+        flagErrorCI = 0;
+    }
+    if(flagErrorFusible == 1 || flagErrorTransformador == 1 || flagErrorCI == 1){
+        return(1);
+    } else {
+        return(0);
     }
     return(0);
 }
