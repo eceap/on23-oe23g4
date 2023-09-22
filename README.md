@@ -1,4 +1,4 @@
-# Repositorio para Proyecto "NombreProyecto"
+# Repositorio para Proyecto "Circuito Inversor"
 Para trabajar con el grupo de proyecto
 ## Datos del grupo
 Completen con sus datos la siguiente tabla:
