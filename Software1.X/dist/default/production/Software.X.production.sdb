@@ -1,0 +1,238 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"52 Z:\Proyectos\Software.X\adc.c
+[e E1292 . `uc
+AIN0 0
+AIN1 1
+AIN2 2
+AIN3 3
+AIN4 4
+AIN5 5
+AIN6 6
+AIN7 7
+AIN8 8
+AIN9 9
+AIN10 10
+AIN11 11
+AIN12 12
+AIN13 13
+AIN_CVREF 14
+AIN_FIXREF 15
+VDD_CALC 255
+]
+"30 Z:\Proyectos\Software.X\main.c
+[e E1356 . `uc
+E_INICIALIZACION 0
+E_FUNCIONANDO 1
+E_ERROR 2
+]
+"35 Z:\Proyectos\Software.X\adc.c
+[v _adcInit adcInit `(v  1 e 1 0 ]
+"52
+[v _adcRead adcRead `(ui  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"33 Z:\Proyectos\Software.X\interrupts.c
+[v _isr isr `II(v  1 e 1 0 ]
+"40 Z:\Proyectos\Software.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"111
+[v _InicializarMEF InicializarMEF `(v  1 e 1 0 ]
+"116
+[v _ActualizarMEF ActualizarMEF `(v  1 e 1 0 ]
+"40 Z:\Proyectos\Software.X\tick.c
+[v _tickInit tickInit `(v  1 e 1 0 ]
+"62
+[v _tickRead tickRead `(ui  1 e 2 0 ]
+"42 Z:\Proyectos\Software.X\user.c
+[v _appInit appInit `(v  1 e 1 0 ]
+"60 C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic16f887.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+[s S184 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"184
+[u S193 . 1 `S184 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES193  1 e 1 @5 ]
+[s S117 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"308
+[u S126 . 1 `S117 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES126  1 e 1 @7 ]
+"1239
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+[s S48 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+`uc 1 ADCS 1 0 :2:6 
+]
+"1277
+[s S53 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 ADCS0 1 0 :1:6 
+`uc 1 ADCS1 1 0 :1:7 
+]
+[s S62 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S65 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+]
+[u S68 . 1 `S48 1 . 1 0 `S53 1 . 1 0 `S62 1 . 1 0 `S65 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES68  1 e 1 @31 ]
+[s S225 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+"1367
+[s S232 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+]
+[u S236 . 1 `S225 1 . 1 0 `S232 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES236  1 e 1 @129 ]
+[s S288 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"1434
+[u S297 . 1 `S288 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES297  1 e 1 @133 ]
+[s S267 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1558
+[u S276 . 1 `S267 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES276  1 e 1 @135 ]
+"2971
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+"3388
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"3450
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"3577
+[v _ADCS0 ADCS0 `VEb  1 e 0 @254 ]
+"3580
+[v _ADCS1 ADCS1 `VEb  1 e 0 @255 ]
+"3586
+[v _ADFM ADFM `VEb  1 e 0 @1279 ]
+"3595
+[v _ADON ADON `VEb  1 e 0 @248 ]
+"3598
+[v _ANS0 ANS0 `VEb  1 e 0 @3136 ]
+"3775
+[v _CCP1IE CCP1IE `VEb  1 e 0 @1122 ]
+"3895
+[v _FVREN FVREN `VEb  1 e 0 @3112 ]
+"3901
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"3910
+[v _GO_nDONE GO_nDONE `VEb  1 e 0 @249 ]
+"4063
+[v _PSA PSA `VEb  1 e 0 @1035 ]
+"4321
+[v _T0CS T0CS `VEb  1 e 0 @1037 ]
+"4363
+[v _TMR0IE TMR0IE `VEb  1 e 0 @93 ]
+"4366
+[v _TMR0IF TMR0IF `VEb  1 e 0 @90 ]
+"4564
+[v _VCFG0 VCFG0 `VEb  1 e 0 @1276 ]
+"4567
+[v _VCFG1 VCFG1 `VEb  1 e 0 @1277 ]
+"20 Z:\Proyectos\Software.X\interrupts.c
+[v _contador50HZ contador50HZ `uc  1 e 1 0 ]
+"30 Z:\Proyectos\Software.X\main.c
+[v _estadoActual estadoActual `E1356  1 e 1 0 ]
+"31
+[v _tInicio tInicio `ui  1 e 2 0 ]
+"33
+[v _error error `uc  1 e 1 0 ]
+"26 Z:\Proyectos\Software.X\tick.c
+[v _tickCounter tickCounter `VEui  1 e 2 0 ]
+"40 Z:\Proyectos\Software.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"109
+} 0
+"42 Z:\Proyectos\Software.X\user.c
+[v _appInit appInit `(v  1 e 1 0 ]
+{
+"68
+} 0
+"40 Z:\Proyectos\Software.X\tick.c
+[v _tickInit tickInit `(v  1 e 1 0 ]
+{
+"56
+} 0
+"35 Z:\Proyectos\Software.X\adc.c
+[v _adcInit adcInit `(v  1 e 1 0 ]
+{
+"45
+} 0
+"111 Z:\Proyectos\Software.X\main.c
+[v _InicializarMEF InicializarMEF `(v  1 e 1 0 ]
+{
+"114
+} 0
+"116
+[v _ActualizarMEF ActualizarMEF `(v  1 e 1 0 ]
+{
+"159
+} 0
+"62 Z:\Proyectos\Software.X\tick.c
+[v _tickRead tickRead `(ui  1 e 2 0 ]
+{
+"63
+[v tickRead@aux aux `ui  1 a 2 0 ]
+"68
+} 0
+"33 Z:\Proyectos\Software.X\interrupts.c
+[v _isr isr `II(v  1 e 1 0 ]
+{
+"57
+} 0
